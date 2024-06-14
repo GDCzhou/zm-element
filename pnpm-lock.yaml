@@ -25,7 +25,7 @@ importers:
         version: 3.4.28(typescript@5.4.5)
       zm-element:
         specifier: workspace:*
-        version: 'link:'
+        version: link:packages/core
     devDependencies:
       '@types/lodash-es':
         specifier: ^4.17.12
@@ -104,6 +104,10 @@ importers:
   packages/hooks: {}
 
   packages/play:
+    dependencies:
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.28(typescript@5.4.5)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.0.4

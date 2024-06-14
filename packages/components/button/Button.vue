@@ -5,5 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <button style="color:red;">test button</button>
+  <button style="color:red; background-color: blue;">test button</button>
 </template>
