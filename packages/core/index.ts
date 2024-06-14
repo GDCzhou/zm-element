@@ -1,7 +1,8 @@
+
 import { makeInstaller } from "@zm-element/utils";
-import components from "./component";
+import component from "./component";
 
-const installer = makeInstaller(components);
+const installer = makeInstaller(component);
 
-export * from "@zm-element/components";
-export default installer;
+export default installer
+export * from '@zm-element/components'

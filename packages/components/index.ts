@@ -1,1 +1,1 @@
-export * from './Button.vue'
+export * from './button'
