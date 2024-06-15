@@ -7,6 +7,9 @@
   "types": "index.d.ts",
   "scripts": {
     "dev": "pnpm --filter @zm-element/play dev",
+    "docs:dev": "pnpm --filter @zm-element/docs dev",
+    "docs:build": "pnpm --filter @zm-element/docs build",
+    "docs:preview": "pnpm --filter @zm-element/docs dev",
     "test": "echo \"todo\""
   },
   "keywords": [],
