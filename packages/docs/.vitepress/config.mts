@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Zm-element",
   description: "高仿elelmentui组件库",
+  base: "/zm-element/", // 部署站点的基础路径 防止样式失效
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
