@@ -22,5 +22,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue"]
+  "include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue", "packages/components/button/Button.test.tsx"]
 }

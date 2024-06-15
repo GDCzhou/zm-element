@@ -10,7 +10,7 @@
     "docs:dev": "pnpm --filter @zm-element/docs dev",
     "docs:build": "pnpm --filter @zm-element/docs build",
     "docs:preview": "pnpm --filter @zm-element/docs dev",
-    "test": "echo \"todo\""
+    "test": "pnpm --filter @zm-element/components test"
   },
   "keywords": [],
   "author": "",
