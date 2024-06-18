@@ -10,18 +10,20 @@
     "docs:dev": "pnpm --filter @zm-element/docs dev",
     "docs:build": "pnpm --filter @zm-element/docs build",
     "docs:preview": "pnpm --filter @zm-element/docs dev",
-    "test": "pnpm --filter @zm-element/components test"
+    "test": "pnpm --filter @zm-element/components test",
+    "sb": "pnpm --filter @zm-element/play storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "zm-element": "workspace:*",
+    "@storybook/addon-actions": "^8.1.9",
     "@zm-element/hooks": "workspace:*",
     "@zm-element/theme": "workspace:*",
     "@zm-element/utils": "workspace:*",
     "lodash-es": "^4.17.21",
-    "vue": "^3.4.19"
+    "vue": "^3.4.19",
+    "zm-element": "workspace:*"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -39,5 +41,7 @@
     "vitest": "^1.4.0",
     "vue-tsc": "^1.8.27"
   },
-  "workspaces":["packages/*"]
+  "workspaces": [
+    "packages/*"
+  ]
 }
