@@ -1,6 +1,7 @@
 import { expect, fn, userEvent, within } from '@storybook/test';
 import type { ArgTypes, Meta, StoryObj } from '@storybook/vue3';
 import { ZButton } from 'zm-element';
+import { ZButtonGroup} from 'zm-element'
 
 type Story = StoryObj<typeof ZButton> & { argTypes?: ArgTypes }
 
@@ -108,6 +109,57 @@ export const Circle: Story = {
       await userEvent.click(canvas.getByRole("button"));
     });
 
+    expect(args.onClick).toHaveBeenCalled();
+  },
+};
+
+export const Group: Story & { args: { content1: string; content2: string } } = {
+  argTypes: {
+    groupType: {
+      control: { type: "select" },
+      options: ["primary", "success", "warning", "danger", "info", ""],
+    },
+    groupSize: {
+      control: { type: "select" },
+      options: ["large", "default", "small", ""],
+    },
+    groupDisabled: {
+      control: "boolean",
+    },
+    content1: {
+      control: { type: "text" },
+      defaultValue: "Button1",
+    },
+    content2: {
+      control: { type: "text" },
+      defaultValue: "Button2",
+    },
+  },
+  args: {
+    round: true,
+    content1: "Button1",
+    content2: "Button2",
+  },
+  render: (args) => ({
+    components: { ZButton, ZButtonGroup },
+    setup() {
+      return { args };
+    },
+    template: container(`
+       <z-button-group :type="args.groupType" :size="args.groupSize" :disabled="args.groupDisabled">
+         <z-button v-bind="args">{{args.content1}}</z-button>
+         <z-button v-bind="args">{{args.content2}}</z-button>
+       </z-button-group>
+    `),
+  }),
+  play: async ({ canvasElement, args, step }) => {
+    const canvas = within(canvasElement);
+    await step("click btn1", async () => {
+      await userEvent.click(canvas.getByText("Button1"));
+    });
+    await step("click btn2", async () => {
+      await userEvent.click(canvas.getByText("Button2"));
+    });
     expect(args.onClick).toHaveBeenCalled();
   },
 };

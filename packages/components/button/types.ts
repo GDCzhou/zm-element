@@ -48,3 +48,16 @@ export interface ButtonEmits {
 export interface ButtonInstance {
   ref: Ref<HTMLButtonElement| void>
 }
+
+
+export interface ButtonGroupContext {
+  size?: ButtonSize
+  type?: ButtonType
+  disable?: boolean
+} 
+
+export interface ButtonGroupProps {
+  size?: ButtonSize;
+  type?: ButtonType;
+  disabled?: boolean;
+}

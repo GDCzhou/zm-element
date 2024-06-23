@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types';
-import { ref, computed } from 'vue';
+import { ref, computed, inject } from 'vue';
 import { throttle } from 'lodash-es'
+import { BUTTON_GROUP_CTX_KEY } from './constants'
+
 import ZIcon from '../icon/Icon.vue'
 
 defineOptions({
@@ -17,21 +19,29 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 const slots = defineSlots()
 const _ref = ref<HTMLButtonElement>()
 const emit = defineEmits<ButtonEmits>()
+const buttonGroupCtx = inject(BUTTON_GROUP_CTX_KEY, void 0)
+
 defineExpose<ButtonInstance>({
   ref: _ref
 })
 
 
-const handleClick = (e:MouseEvent) => {
-  emit('click',e)
-}
-const handleClickThrttle = throttle(handleClick, props.throttleTime)
-
+/** computed */
+const size = computed(()=> buttonGroupCtx?.size ?? props.size ?? '')
+const type = computed(()=> buttonGroupCtx?.type ?? props.type ?? '')
+const disabled = computed(()=> buttonGroupCtx?.disable ?? props.disabled ?? '')
 const iconStyle = computed(()=>{
   return {
     marginRight: slots.default ? '6px' : '0'
   }
 })
+
+/** 事件 */
+const handleClick = (e:MouseEvent) => {
+  emit('click',e)
+}
+const handleClickThrttle = throttle(handleClick, props.throttleTime)
+
 </script>
 
 <template>
