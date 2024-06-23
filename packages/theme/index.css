@@ -3,66 +3,66 @@
 
 :root {
   /* colors */
-  --er-color-white: #ffffff;
-  --er-color-black: #000000;
+  --z-color-white: #ffffff;
+  --z-color-black: #000000;
   --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
-  --er-bg-color: #ffffff;
-  --er-bg-color-page: #f2f3f5;
-  --er-bg-color-overlay: #ffffff;
-  --er-text-color-primary: #303133;
-  --er-text-color-regular: #606266;
-  --er-text-color-secondary: #909399;
-  --er-text-color-placeholder: #a8abb2;
-  --er-text-color-disabled: #c0c4cc;
-  --er-border-color: #dcdfe6;
-  --er-border-color-light: #e4e7ed;
-  --er-border-color-lighter: #ebeef5;
-  --er-border-color-extra-light: #f2f6fc;
-  --er-border-color-dark: #d4d7de;
-  --er-border-color-darker: #cdd0d6;
-  --er-fill-color: #f0f2f5;
-  --er-fill-color-light: #f5f7fa;
-  --er-fill-color-lighter: #fafafa;
-  --er-fill-color-extra-light: #fafcff;
-  --er-fill-color-dark: #ebedf0;
-  --er-fill-color-darker: #e6e8eb;
-  --er-fill-color-blank: #ffffff;
+  --z-bg-color: #ffffff;
+  --z-bg-color-page: #f2f3f5;
+  --z-bg-color-overlay: #ffffff;
+  --z-text-color-primary: #303133;
+  --z-text-color-regular: #606266;
+  --z-text-color-secondary: #909399;
+  --z-text-color-placeholder: #a8abb2;
+  --z-text-color-disabled: #c0c4cc;
+  --z-border-color: #dcdfe6;
+  --z-border-color-light: #e4e7ed;
+  --z-border-color-lighter: #ebeef5;
+  --z-border-color-extra-light: #f2f6fc;
+  --z-border-color-dark: #d4d7de;
+  --z-border-color-darker: #cdd0d6;
+  --z-fill-color: #f0f2f5;
+  --z-fill-color-light: #f5f7fa;
+  --z-fill-color-lighter: #fafafa;
+  --z-fill-color-extra-light: #fafcff;
+  --z-fill-color-dark: #ebedf0;
+  --z-fill-color-darker: #e6e8eb;
+  --z-fill-color-blank: #ffffff;
   
   @each $val, $color in var(--colors) {
-    --er-color-$(val): $(color);
+    --z-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --er-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+      --z-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
     }
-    --er-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    --z-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
 
   /* border */
-  --er-border-width: 1px;
-  --er-border-style: solid;
-  --er-border-color-hover: var(--er-text-color-disabled);
-  --er-border: var(--er-border-width) var(--er-border-style) var(--er-border-color);
-  --er-border-radius-base: 4px;
-  --er-border-radius-small: 2px;
-  --er-border-radius-round: 20px;
-  --er-border-radius-circle: 100%;
+  --z-border-width: 1px;
+  --z-border-style: solid;
+  --z-border-color-hover: var(--z-text-color-disabled);
+  --z-border: var(--z-border-width) var(--z-border-style) var(--z-border-color);
+  --z-border-radius-base: 4px;
+  --z-border-radius-small: 2px;
+  --z-border-radius-round: 20px;
+  --z-border-radius-circle: 100%;
 
   /*font*/
-  --er-font-size-extra-large: 20px;
-  --er-font-size-large: 18px;
-  --er-font-size-medium: 16px;
-  --er-font-size-base: 14px;
-  --er-font-size-small: 13px;
-  --er-font-size-extra-small: 12px;
-  --er-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  --z-font-size-extra-large: 20px;
+  --z-font-size-large: 18px;
+  --z-font-size-medium: 16px;
+  --z-font-size-base: 14px;
+  --z-font-size-small: 13px;
+  --z-font-size-extra-small: 12px;
+  --z-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
-  --er-font-weight-primary: 500;
+  --z-font-weight-primary: 500;
 
   /*disabled*/
-  --er-disabled-bg-color: var(--er-fill-color-light);
-  --er-disabled-text-color: var(--er-text-color-placeholder);
-  --er-disabled-border-color: var(--er-border-color-light);
+  --z-disabled-bg-color: var(--z-fill-color-light);
+  --z-disabled-text-color: var(--z-text-color-placeholder);
+  --z-disabled-border-color: var(--z-border-color-light);
 
   /*animation*/
-  --er-transition-duration: 0.4s;
-  --er-transition-duration-fast: 0.2s;
+  --z-transition-duration: 0.4s;
+  --z-transition-duration-fast: 0.2s;
 }

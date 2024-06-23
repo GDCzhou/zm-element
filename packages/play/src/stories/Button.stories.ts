@@ -2,7 +2,7 @@ import { expect, fn, userEvent, within } from '@storybook/test';
 import type { ArgTypes, Meta, StoryObj } from '@storybook/vue3';
 import { ZButton } from 'zm-element';
 
-type Story = StoryObj<typeof ZButton> & { argTypes: ArgTypes }
+type Story = StoryObj<typeof ZButton> & { argTypes?: ArgTypes }
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<typeof ZButton> = {
@@ -66,9 +66,8 @@ export const Default: Story = {
       setup() {
         // const onClick = () => {
         //   console.log('clicked');
-
         // }
-        return { args,  };
+        return { args};
       },
       template: '<z-button v-bind="args" >Button</z-button>',
     }
@@ -82,28 +81,33 @@ export const Default: Story = {
   }
 }
 
-export const Primary = {
-  args: {
-    ...Default,
-  }
-};
+const container = (val: string) => `
+<div style="margin:5px">
+  ${val}
+</div>
+`;
 
-export const Secondary = {
+
+
+export const Circle: Story = {
   args: {
-    label: 'Button',
+    icon: "search",
   },
-};
+  render: (args) => ({
+    components: { ZButton },
+    setup() {
+      return { args };
+    },
+    template: container(`
+      <z-button circle v-bind="args"/>
+    `),
+  }),
+  play: async ({ canvasElement, args, step }) => {
+    const canvas = within(canvasElement);
+    await step("click button", async () => {
+      await userEvent.click(canvas.getByRole("button"));
+    });
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    expect(args.onClick).toHaveBeenCalled();
   },
 };

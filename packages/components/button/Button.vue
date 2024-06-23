@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { throttle } from 'lodash-es'
+import ZIcon from '../icon/Icon.vue'
 
 defineOptions({
   name: 'ZButton'
@@ -13,7 +14,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   useThrottle: true
   })
 
-const slote = defineSlots()
+const slots = defineSlots()
 const _ref = ref<HTMLButtonElement>()
 const emit = defineEmits<ButtonEmits>()
 defineExpose<ButtonInstance>({
@@ -26,6 +27,11 @@ const handleClick = (e:MouseEvent) => {
 }
 const handleClickThrttle = throttle(handleClick, props.throttleTime)
 
+const iconStyle = computed(()=>{
+  return {
+    marginRight: slots.default ? '6px' : '0'
+  }
+})
 </script>
 
 <template>
@@ -47,7 +53,24 @@ const handleClickThrttle = throttle(handleClick, props.throttleTime)
   :type="tag === 'button' ? nativeType : void 0"
   @click="(e:MouseEvent) => useThrottle ? handleClickThrttle(e) : handleClick(e)"
   >
-    <slot></slot>
+  <template v-if="loading">
+    <slot name="loading">
+      <ZIcon 
+      class="loading-icon"
+      :icon="loadingIcon?? 'spinner'"
+      :style="iconStyle"
+      size="1x"
+      spin
+      />
+    </slot >
+  </template>
+    <ZIcon 
+    :icon="icon"
+    size="1x"
+    :style="iconStyle"
+    v-if="icon && !loading"
+    />
+    <slot />
   </component>
 </template>
 
