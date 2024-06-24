@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import ZButton from 'zm-element'
+import Zmelement from 'zm-element'
 
 
 const app = createApp(App)
 app
-.use(ZButton)
+.use(Zmelement)
 .mount('#app')

@@ -1,9 +1,31 @@
 {
   "name": "zm-element",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "components library by Vue3 +TS",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/index.css",
+    "./dist/theme/*.css"
+  ],
+  "main": "./dist/umd/index.umd.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/core/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs",
+      "types": "./dist/types/core/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+
+
   "scripts": {
     
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,9 +39,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zm-element/components": "workspace:*"
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8"
   },
   "devDependencies": {
-    "vite-plugin-dts": "^3.9.1"
+    "vite-plugin-dts": "^3.9.1",
+    "@zm-element/components": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.28"
   }
 }

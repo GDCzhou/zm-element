@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+
 import { resolve } from 'path'
-import dts from 'vite-plugin-dts'
 import { readdirSync } from 'fs';
-import { defer, delay, filter, map, includes } from "lodash-es";
+
+import {  filter, map, includes } from "lodash-es";
+
+import dts from 'vite-plugin-dts'
+import vue from '@vitejs/plugin-vue'
+
 
 function getDirectoriesSync(basePath: string) {
   const entries = readdirSync(basePath, { withFileTypes: true });
@@ -14,19 +18,24 @@ function getDirectoriesSync(basePath: string) {
   );
 }
 
+console.log(getDirectoriesSync('../components'));
+
 
 export default defineConfig({
   plugins: [vue(),dts({
     tsconfigPath: '../../tsconfig.build.json',
     outDir: 'dist/types'
-  })],
+  }),
+
+],
   build: {
     outDir: 'dist/es',
     lib: {
       entry: resolve(__dirname, 'index.ts'),
-      name: 'zm-element',
+      name: 'Zmelement',
       fileName: 'index',
-      formats: ['es']
+      formats: ['es'],
+      
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
@@ -35,8 +44,8 @@ export default defineConfig({
         "@fortawesome/fontawesome-svg-core",
         "@fortawesome/free-solid-svg-icons",
         "@fortawesome/vue-fontawesome",
-        // "async-validator"
-        // "@popperjs/core"
+        "async-validator",
+        "@popperjs/core"
       ],
       output: {
         assetFileNames(chunkInfo) {
@@ -58,7 +67,10 @@ export default defineConfig({
           }
 
           for (const item of getDirectoriesSync("../components")) {
-            if (includes(id, `/packages/components/${item}`)) return item;
+            if (includes(id, `/packages/components/${item}`)) {
+              console.log(item,id)
+              return item;
+            }
           }
         }
       }

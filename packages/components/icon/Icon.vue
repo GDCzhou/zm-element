@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type IconProps } from "./types";
+import type {  IconProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { omit } from "lodash-es";
 import { computed } from "vue";
@@ -17,8 +17,8 @@ const customStyles = computed(() => ({ color: props.color ?? void 0 }));
 
 <template>
   <i
-    class="er-icon"
-    :class="{ [`er-icon--${type}`]: type }"
+    class="z-icon"
+    :class="{ [`z-icon--${type}`]: type }"
     :style="customStyles"
     v-bind="$attrs"
   >
@@ -26,6 +26,6 @@ const customStyles = computed(() => ({ color: props.color ?? void 0 }));
   </i>
 </template>
 
-<style scoped>
+<style>
 @import "./style.css";
 </style>

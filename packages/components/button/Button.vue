@@ -4,7 +4,7 @@ import { ref, computed, inject } from 'vue';
 import { throttle } from 'lodash-es'
 import { BUTTON_GROUP_CTX_KEY } from './constants'
 
-import ZIcon from '../icon/Icon.vue'
+import ZIcon from '../Icon/Icon.vue'
 
 defineOptions({
   name: 'ZButton'

@@ -2,14 +2,15 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
-
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue()
+  ],
   build: {
     outDir: 'dist/umd',
     lib: {
       entry: resolve(__dirname, 'index.ts'),
-      name: 'zm-element',
+      name: 'Zmelement',
       fileName: 'index',
       formats: ['umd']
     },
@@ -21,11 +22,12 @@ export default defineConfig({
         globals: {
           vue: 'Vue'
         },
+        exports: 'named',
         assetFileNames(chunkInfo) {
-            if (chunkInfo.name === 'style.css') {
-                return 'index.css'
-            }
-            return chunkInfo.name as string
+          if (chunkInfo.name === 'style.css') {
+            return 'index.css'
+          }
+          return chunkInfo.name as string
         },
       }
     }
