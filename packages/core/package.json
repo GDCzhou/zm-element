@@ -33,7 +33,9 @@
     "build-es": "vite build --config vite.es.config.ts",
     "move-style": "move-file dist/es/index.css dist/index.css",
     "build-only": "run-p build-es build-umd",
-    "build": "run-s build-only move-style"
+    "build": "run-s clean build-only move-style",
+    "release": "release-it",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
