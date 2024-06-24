@@ -12,7 +12,7 @@
     "docs:build": "pnpm --filter @zm-element/docs build",
     "docs:preview": "pnpm --filter @zm-element/docs dev",
     "test": "pnpm --filter @zm-element/components test",
-    "sb": "pnpm --filter @zm-element/play storybook",
+    "sb": "run-s build && pnpm --filter @zm-element/play storybook",
     "build": "pnpm --filter zm-element build",
     "release": "pnpm --filter zm-element release"
   },
