@@ -9,4 +9,6 @@ library.add(fas)
 const installer = makeInstaller(component);
 
 export default installer
-export * from '@zm-element/components'
+// export * from '@zm-element/components'
+
+export * from "../components";
