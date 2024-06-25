@@ -21,9 +21,7 @@ const _ref = ref<HTMLButtonElement>()
 const emit = defineEmits<ButtonEmits>()
 const buttonGroupCtx = inject(BUTTON_GROUP_CTX_KEY, void 0)
 
-defineExpose<ButtonInstance>({
-  ref: _ref
-})
+
 
 
 /** computed */
@@ -43,6 +41,13 @@ const handleClick = (e:MouseEvent) => {
 }
 const handleClickThrttle = throttle(handleClick, props.throttleTime)
 
+
+defineExpose<ButtonInstance>({
+  ref: _ref,
+  disabled,
+  size,
+  type,
+})
 </script>
 
 <template>
