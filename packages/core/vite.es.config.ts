@@ -30,6 +30,7 @@ export default defineConfig({
 ],
   build: {
     outDir: 'dist/es',
+    cssCodeSplit: true,
     lib: {
       entry: resolve(__dirname, 'index.ts'),
       name: 'Zmelement',
