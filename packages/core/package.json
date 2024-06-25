@@ -25,16 +25,19 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build-umd": "vite build --config vite.umd.config.ts",
     "build-es": "vite build --config vite.es.config.ts",
-    "move-style": "move-file dist/es/index.css dist/index.css",
-    "build-only": "run-p build-es build-umd",
-    "build": "run-s clean build-only move-style",
-    "release": "release-it",
-    "clean": "rimraf dist"
+    "build:watch": "run-p build-es:watch build-umd:watch",
+    "build": "run-p build-es build-umd",
+    "build-es:watch": "vite build --watch --config vite.es.config.ts",
+    "build-umd:watch": "vite build --watch --config vite.umd.config.ts"
   },
-  "keywords": ["library", "vue3", "components", "typescript"],
+  "keywords": [
+    "library",
+    "vue3",
+    "components",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -43,8 +46,9 @@
     "@fortawesome/vue-fontawesome": "^3.0.8"
   },
   "devDependencies": {
-    "vite-plugin-dts": "^3.9.1",
-    "@zm-element/components": "workspace:*"
+    "@zm-element/components": "workspace:*",
+    "vite-plugin-compression2": "^1.1.1",
+    "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
     "vue": "^3.4.28"

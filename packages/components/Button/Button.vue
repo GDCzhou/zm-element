@@ -39,6 +39,7 @@ const iconStyle = computed(()=>{
 /** 事件 */
 const handleClick = (e:MouseEvent) => {
   emit('click',e)
+  console.log('test')
 }
 const handleClickThrttle = throttle(handleClick, props.throttleTime)
 
