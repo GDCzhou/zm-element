@@ -3,9 +3,12 @@ import type { CollapseEmits, CollapseItemName, CollapseProps } from './types'
 import { ref } from 'vue'
 import { COLLAPSE_CTX_KEY } from './constants'
 import { provide, watch } from 'vue'
+import { debugWarning } from '@zm-element/utils'
 
+
+const COMP_NAME = 'ZCollapse'
 defineOptions({
-  name: 'ZCollapse'
+  name: COMP_NAME
 })
 
 const props = defineProps<CollapseProps>()
@@ -13,7 +16,8 @@ const emit = defineEmits<CollapseEmits>()
 const activeNames = ref<CollapseItemName[]>(props.modelValue)
 
 if (props.accordion && activeNames.value.length > 1) {
-  console.warn('[Z-UI WARNING] When accordion is true, only one collapse item can be selected at a time.')
+  // console.warn('[Z-UI WARNING] When accordion is true, only one collapse item can be selected at a time.')
+  debugWarning(COMP_NAME, 'When accordion is true, only one collapse item can be selected at a time')
 }
 
 
@@ -33,7 +37,7 @@ function handleItemClick(item: CollapseItemName) {
   updateActiveNames(_activeName)
 }
 
-function updateActiveNames(newValue: CollapseItemName[]) {  
+function updateActiveNames(newValue: CollapseItemName[]) {
   activeNames.value = newValue
   emit('update:modelValue', newValue)
   emit('change', newValue)
