@@ -1,3 +1,5 @@
+import 'zm-element/dist/theme/index.css'
+
 /** @type { import('@storybook/vue3').Preview } */
 const preview = {
   parameters: {

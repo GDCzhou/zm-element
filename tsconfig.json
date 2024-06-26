@@ -27,7 +27,7 @@
    "packages/**/*.tsx", 
    "packages/**/*.vue", 
    "packages/components/Button/Button.test.tsx",
-    "packages/play/src/stories/Button.stories.ts",
+    "packages/play/src/stories/*.stories.ts",
     "./env.d.ts"
   ]
 }

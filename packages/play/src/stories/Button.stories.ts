@@ -2,7 +2,7 @@ import { expect, fn, userEvent, within } from '@storybook/test';
 import type { ArgTypes, Meta, StoryObj } from '@storybook/vue3';
 import { ZButton } from 'zm-element';
 import { ZButtonGroup} from 'zm-element'
-import 'zm-element/dist/index.css'
+import "zm-element/dist/theme/Button.css";
 
 type Story = StoryObj<typeof ZButton> & { argTypes?: ArgTypes }
 

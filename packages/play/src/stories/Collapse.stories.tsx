@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { ZCollapse, ZCollapseItem } from "zm-element";
-import 'zm-element/dist/index.css'
+import "zm-element/dist/theme/Collapse.css";
 
 type Story = StoryObj<typeof ZCollapse>;
 
