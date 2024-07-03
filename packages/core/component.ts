@@ -6,7 +6,8 @@ import {
   ZButtonGroup,
   ZCollapse,
   ZCollapseItem,
-  ZAlert
+  ZAlert,
+  ZTooltip,
 }
   from "@zm-element/components";
 import type { Plugin } from "vue";
@@ -18,5 +19,6 @@ export default [
   ZButtonGroup,
   ZCollapse,
   ZCollapseItem,
-  ZAlert
+  ZAlert,
+  ZTooltip
 ] as Plugin[];

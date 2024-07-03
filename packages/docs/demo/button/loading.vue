@@ -6,7 +6,7 @@
     >
     <z-button type="primary" loading>
       <template #loading>
-        <er-icon style="margin-right: 6px" icon="star" spin />
+        <z-icon style="margin-right: 6px" icon="star" spin />
       </template>
       Loading
     </z-button>

@@ -29,7 +29,9 @@
     "@zm-element/utils": "workspace:*",
     "lodash-es": "^4.17.21",
     "vue": "^3.4.28",
-    "zm-element": "workspace:*"
+    "zm-element": "workspace:*",
+    "@popperjs/core": "^2.11.8",
+    "async-validator": "^4.2.5"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
