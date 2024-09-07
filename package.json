@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "pnpm --filter @zm-element/play dev",
     "docs:dev": "pnpm --filter @zm-element/docs dev",
-    "docs:build": "pnpm --filter @zm-element/docs build",
-    "docs:preview": "pnpm --filter @zm-element/docs dev",
+    "docs:build": "cross-env NODE_ENV=production pnpm build && pnpm --filter @zm-element/docs build",
     "test": "cross-env NODE_ENV=test pnpm --filter @zm-element/components test",
     "sb": "pnpm --filter @zm-element/play storybook",
     "build-hooks": "cross-env NODE_ENV=production pnpm --filter @zm-element/hooks build",
