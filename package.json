@@ -1,11 +1,9 @@
 {
-  "name": "zm-element",
+  "name": "zm-element-monorepo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
-  "type": "module",
+
   "scripts": {
     "dev": "pnpm --filter @zm-element/play dev",
     "docs:dev": "pnpm --filter @zm-element/docs dev",

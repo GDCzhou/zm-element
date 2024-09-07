@@ -5,7 +5,7 @@ import { getLastBottomOffset } from "./methods";
 import { delay, bind } from "lodash-es";
 import { useEventListener, useOffset } from "@zm-element/hooks";
 import { RenderVnode, typeIconMap } from "@zm-element/utils";
-import ErIcon from "../Icon/Icon.vue";
+import ZIcon from "../Icon/Icon.vue";
 
 defineOptions({
   name: "ZMessage",
