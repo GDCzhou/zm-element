@@ -5,3 +5,6 @@ import ButtonGroup from './ButtonGroup.vue'
 
 export const ZButton = withInstall(Button)
 export const ZButtonGroup = withInstall(ButtonGroup)
+
+
+export * from './types'

@@ -34,7 +34,7 @@ export interface ButtonProps {
   autofocus?: boolean
   /** icon */
   icon?: string
-  onClick?: (e: MouseEvent) => void
+  // onClick?: (e: MouseEvent) => void
 }
 
 

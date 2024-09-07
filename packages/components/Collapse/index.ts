@@ -5,3 +5,6 @@ import CollapseItem from './CollapseItem.vue'
 
 export const ZCollapse = withInstall(Collapse)
 export const ZCollapseItem = withInstall(CollapseItem)
+
+
+export * from './types'

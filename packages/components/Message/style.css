@@ -1,0 +1,79 @@
+.z-message {
+  --z-message-bg-color: var(--z-color-info-light-9);
+  --z-message-border-color: var(--z-border-color-lighter);
+  --z-message-padding: 15px 19px;
+  --z-message-close-size: 16px;
+  --z-message-close-icon-color: var(--z-text-color-placeholder);
+  --z-message-close-hover-color: var(--z-text-color-secondary);
+  --z-message-icon-size: 16px;
+  --z-message-icon-margin: 8px;
+}
+
+.z-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--z-border-radius-base);
+  border-width: var(--z-border-width);
+  border-style: var(--z-border-style);
+  border-color: var(--z-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--z-message-bg-color);
+  padding: var(--z-message-padding);
+  display: flex;
+  align-items: center;
+  transition: top var(--z-transition-duration), opacity var(--z-transition-duration),
+    transform var(--z-transition-duration);
+  .z-message__icon {
+    color: var(--z-message-text-color);
+    font-size: var(--z-message-icon-size);
+    width: var(--z-message-icon-size);
+    margin-right: var(--z-message-icon-margin);
+  }
+  .z-message__content {
+    color: var(--z-message-text-color);
+    overflow-wrap: break-word;
+  }
+  &.is-close .z-message__content {
+    padding-right: 10px;
+  }
+  &.text-center {
+    justify-content: center;
+  }
+  .z-message__close {
+    display: flex;
+    align-items: center;
+  }
+  .z-message__close .z-icon {
+    cursor: pointer;
+  }
+}
+
+@each $val in info, success, warning, danger {
+  .z-message--$(val) {
+    --z-message-bg-color: var(--z-color-$(val)-light-9);
+    --z-message-border-color: var(--z-color-$(val)-light-8);
+    --z-message-text-color: var(--z-color-$(val));
+    .z-message__close {
+      --z-icon-color: var(--z-color-$(val));
+    }
+  }
+}
+
+.z-message--error {
+  --z-message-bg-color: var(--z-color-danger-light-9);
+  --z-message-border-color: var(--z-color-danger-light-8);
+  --z-message-text-color: var(--z-color-danger);
+  .z-message__close {
+    --z-icon-color: var(--z-color-danger);
+  }
+}
+
+.z-message.fade-up-enter-from,
+.z-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

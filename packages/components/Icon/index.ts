@@ -3,3 +3,6 @@ import Icon from './Icon.vue'
 
 
 export const ZIcon = withInstall(Icon)
+
+
+export * from './types'

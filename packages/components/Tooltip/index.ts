@@ -4,3 +4,4 @@ import Tooltip from './Tooltip.vue'
 export const ZTooltip = withInstall(Tooltip)
 
 
+export * from './types'

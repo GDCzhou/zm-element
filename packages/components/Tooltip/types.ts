@@ -1,19 +1,21 @@
-import type { Options } from '@popperjs/core'
+import type { Options,Placement } from '@popperjs/core'
 
 
-export interface TooltipProps extends Options {
+export interface TooltipProps {
   content?: string;
-  trigger?: 'hover' | 'click'  | 'contextmenu';
-  // 是否显示 tooltip
-  visible?: boolean;
+  trigger?: "hover" | "click" | "contextmenu";
+  placement?: Placement;
+  manual?: boolean;
+  disabled?: boolean;
+  popperOptions?: Partial<Options>;
   transition?: string;
   showTimeout?: number;
-  hideTimeOut?: number;
+  hideTimeout?: number;
 }
 
 export interface TooltipEmits {
-  (e: 'visibleChange', value: boolean): void;
-  (e: 'clickOutside'): void;
+  (e: "visible-change", value: boolean): void;
+  (e: "click-outside"): void;
 }
 
 export interface TooltipInstance {

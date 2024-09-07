@@ -1,7 +1,7 @@
 <script setup>
-import { ErMessage } from "eric-ui";
+import { ZMessage } from "zm-element";
 function handleBtnClick() {
-  ErMessage.info("btn click");
+  ZMessage.info("btn click");
 }
 </script>
 

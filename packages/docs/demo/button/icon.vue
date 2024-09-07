@@ -5,7 +5,7 @@
     <z-button type="primary" icon="trash" />
     <z-button type="primary" icon="search">Search</z-button>
     <z-button type="primary">
-      Upload<er-icon icon="upload" style="margin-left: 8px" />
+      Upload<z-icon icon="upload" style="margin-left: 8px" />
     </z-button>
   </div>
 </template>

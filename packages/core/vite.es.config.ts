@@ -123,7 +123,7 @@ export default defineConfig({
             return 'utils'
           }
           console.log(id);
-          
+          // incorrect 
           for (const item of getDirectoriesSync("../components")) {
             if (includes(id, `/packages/components/${item}`)) {
               return item;

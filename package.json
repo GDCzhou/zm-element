@@ -13,8 +13,10 @@
     "docs:preview": "pnpm --filter @zm-element/docs dev",
     "test": "cross-env NODE_ENV=test pnpm --filter @zm-element/components test",
     "sb": "pnpm --filter @zm-element/play storybook",
-    "build": "cross-env NODE_ENV=production pnpm --filter zm-element build",
-    "build:dev": "cross-env NODE_ENV=development pnpm --filter zm-element build:watch"
+    "build-hooks": "cross-env NODE_ENV=production pnpm --filter @zm-element/hooks build",
+    "build-components": "cross-env NODE_ENV=production pnpm --filter zm-element build",
+    "build:dev": "cross-env NODE_ENV=development pnpm --filter zm-element build:watch",
+    "build": "run-s build-hooks build-components"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,9 @@
     "@zm-element/hooks": "workspace:*",
     "@zm-element/theme": "workspace:*",
     "@zm-element/utils": "workspace:*",
+    "@zm-element/vite-plugins": "workspace:*",
+    "@vitepress-preview/component": "workspace:*",
+
     "lodash-es": "^4.17.21",
     "vue": "^3.4.28",
     "zm-element": "workspace:*",
@@ -53,6 +58,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vitest": "^1.4.0",
+    "vite-plugin-dts": "^3.9.1",
     "vue-tsc": "^1.8.27"
   },
   "workspaces": [
