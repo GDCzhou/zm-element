@@ -74,32 +74,20 @@ defineExpose({
 </script>
 
 <template>
-  <Transition
-    :name="transitionName"
-    @enter="boxHeight = messageRef!.getBoundingClientRect().height"
-    @after-leave="!visible && onDestory()"
-  >
-    <div
-      ref="messageRef"
-      class="er-message"
-      :class="{
-        [`er-message--${type}`]: type,
-        'is-close': showClose,
-        'text-center': center,
-      }"
-      :style="cssStyle"
-      v-show="visible"
-      role="alert"
-      @mouseenter="clearTimer"
-      @mouseleave="startTimmer"
-    >
-      <z-icon class="er-message__icon" :icon="iconName" />
-      <div class="er-message__content">
+  <Transition :name="transitionName" @enter="boxHeight = messageRef!.getBoundingClientRect().height"
+    @after-leave="!visible && onDestory()">
+    <div ref="messageRef" class="z-message" :class="{
+      [`z-message--${type}`]: type,
+      'is-close': showClose,
+      'text-center': center,
+    }" :style="cssStyle" v-show="visible" role="alert" @mouseenter="clearTimer" @mouseleave="startTimmer">
+      <z-icon class="z-message__icon" :icon="iconName" />
+      <div class="z-message__content">
         <slot>
           <render-vnode v-if="message" :vNode="message" />
         </slot>
       </div>
-      <div class="er-message__close" v-if="showClose">
+      <div class="z-message__close" v-if="showClose">
         <z-icon icon="xmark" @click.stop="close" />
       </div>
     </div>
