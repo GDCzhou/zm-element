@@ -21,8 +21,8 @@ const handleClick = () => {
 
 </script>
 <template>
-  <div class="z-collapse-item" :class="{ 'is-disabled': disabled }" @click="handleClick">
-    <div class="z-collapse-item__header" :class="{
+  <div class="z-collapse-item" :class="{ 'is-disabled': disabled }">
+    <div class="z-collapse-item__header" @click="handleClick" :class="{
       'is-active': isActive,
       'is-disabled': disabled
     }">
