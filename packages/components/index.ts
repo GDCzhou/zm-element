@@ -6,4 +6,4 @@ export * from './Tooltip'
 export * from './Dropdown'
 export * from './Message'
 export * from './Dropdown'
-
+export * from './Loading'
