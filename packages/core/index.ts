@@ -13,5 +13,6 @@ const installer = makeInstaller(component);
 
 export default installer
 export * from '@zm-element/components'
+export * from '@zm-element/locale'
 
 // export * from "../components";
