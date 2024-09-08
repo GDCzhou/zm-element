@@ -1,7 +1,7 @@
 <template>
-  <er-button>button</er-button>
-  <er-button tag="div" role="button" tabindex="0">div</er-button>
-  <er-button
+  <z-button>button</z-button>
+  <z-button tag="div" role="button" tabindex="0">div</z-button>
+  <z-button
     type="primary"
     tag="a"
     href="https://github.com/EricWXY/zm-element"
@@ -9,5 +9,5 @@
     rel="noopener noreferrer"
   >
     a
-  </er-button>
+  </z-button>
 </template>

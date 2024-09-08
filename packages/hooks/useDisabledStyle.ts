@@ -28,7 +28,7 @@ export function useDisabledStyle() {
       node.props = assign(node?.props, {
         style: {
           cursor: "not-allowed",
-          color: "var(--er-text-color-placeholder)",
+          color: "var(--z-text-color-placeholder)",
         },
       });
     });
