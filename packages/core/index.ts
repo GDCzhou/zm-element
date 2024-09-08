@@ -1,5 +1,5 @@
 
-import { makeInstaller } from "@zm-element/utils";
+import makeInstaller from "./makeInstaller";
 import component from "./component";
 import "@zm-element/theme/index.css"
 import { library } from "@fortawesome/fontawesome-svg-core";

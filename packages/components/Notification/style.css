@@ -1,0 +1,95 @@
+.z-notification {
+  --z-notification-width: 330px;
+  --z-notification-padding: 14px 26px 14px 13px;
+  --z-notification-radius: 8px;
+  --z-notification-shadow: var(--z-box-shadow-light);
+  --z-notification-border-color: var(--z-border-color-lighter);
+  --z-notification-icon-size: 24px;
+  --z-notification-close-font-size: var(--z-message-close-size, 16px);
+  --z-notification-content-font-size: var(--z-font-size-base);
+  --z-notification-content-color: var(--z-text-color-regular);
+  --z-notification-title-font-size: 16px;
+  --z-notification-title-color: var(--z-text-color-primary);
+  --z-notification-close-color: var(--z-text-color-secondary);
+  --z-notification-close-hover-color: var(--z-text-color-regular)
+}
+.z-notification {
+  display: flex;
+  width: var(--z-notification-width);
+  padding: var(--z-notification-padding);
+  border-radius: var(--z-notification-radius);
+  box-sizing: border-box;
+  border: 1px solid var(--z-notification-border-color);
+  position: fixed;
+  background-color: var(--z-bg-color-overlay);
+  box-shadow: var(--z-notification-shadow);
+  transition: opacity var(--z-transition-duration),transform var(--z-transition-duration),right var(--z-transition-duration),top .4s,bottom var(--z-transition-duration);
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  z-index: 9999;
+
+  &.right {
+    right: 10px;
+  }
+
+  &.left {
+    left: 10px;
+  }
+
+  .z-notification__text {
+    margin: 0 10px;
+  }
+  .z-notification__icon {
+    height: var(--z-notification-icon-size);
+    width: var(--z-notification-icon-size);
+    font-size: var(--z-notification-icon-size);
+    color: var(--z-notification-icon-color);
+  }
+
+  .z-notification__title {
+    font-weight: 700;
+    font-size: var(--z-notification-title-font-size);
+    line-height: var(--z-notification-icon-size);
+    color: var(--z-notification-title-color);
+    margin: 0
+  }
+  .z-notification__content {
+    font-size: var(--z-notification-content-font-size);
+    line-height: 24px;
+    margin: 6px 0 0;
+    color: var(--z-notification-content-color);
+    text-align: justify
+  }
+  .z-notification__close {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--z-notification-close-color);
+    font-size: var(--z-notification-close-font-size)
+  }
+}
+@each $val in info,success,warning,danger { 
+  .z-notification--$(val) {
+    --z-notification-icon-color: var(--z-color-$(val));
+    color: var(--el-notification-icon-color);
+  }
+}
+.z-notification--error {
+  --z-notification-icon-color: var(--z-color-danger);
+  color: var(--el-notification-icon-color);
+}
+
+.z-notification-fade-enter-from {
+  &.right{
+    right: 0;
+    transform: translate(100%);
+  }
+  &.left{
+    left:0;
+    transform: translate(-100%);
+  }
+}
+.z-notification-fade-leave-to {
+  opacity: 0;
+}

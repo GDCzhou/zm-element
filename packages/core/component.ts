@@ -17,12 +17,12 @@ import {
   // ZOption,
   ZForm,
   ZFormItem,
-  // ZNotification,
+  ZNotification,
   ZLoading,
   // ZUpload,
-  // ZPopconfirm,
+  ZPopconfirm,
   ZMessageBox,
-  // ZConfigProvider
+  ZConfigProvider
 }
   from "@zm-element/components";
 import type { Plugin } from "vue";
@@ -50,10 +50,10 @@ export default [
   // ZOption,
   ZForm,
   ZFormItem,
-  // ZNotification,
+  ZNotification,
   ZLoading,
   // ZUpload,
-  // ZPopconfirm,
+  ZPopconfirm,
   ZMessageBox,
-  // ZConfigProvider
+  ZConfigProvider
 ] as Plugin[];

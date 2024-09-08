@@ -96,7 +96,8 @@ export default defineConfig({
         "@fortawesome/free-solid-svg-icons",
         "@fortawesome/vue-fontawesome",
         "async-validator",
-        "@popperjs/core"
+        "@popperjs/core",
+        "vue3-i18n"
       ],
       output: {
         assetFileNames(chunkInfo) {
