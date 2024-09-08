@@ -6,7 +6,7 @@ import type {
   NotificationParams,
   NotificationHandler,
   NotificationProps,
-  notificationType,
+  NotificationType,
 } from "./types";
 import { notificationTypes, notificationPosition } from "./types";
 import { shallowReactive, isVNode, render, h } from "vue";
@@ -95,7 +95,7 @@ export const notification: NotificationFn & Partial<Notification> = function (
   return instance.handler;
 };
 
-export function closeAll(type?: notificationType) {
+export function closeAll(type?: NotificationType) {
   instancesMap.forEach((instances) => {
     each(instances, (instance) => {
       if (type) {
